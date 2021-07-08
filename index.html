@@ -1,23 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+  <title>mafayc</title>
+  <meta charset="utf-8">
 </head>
+
+
+
+
+<!--正文如下-->
+<!--题头-->
 <body>
-<!--单机控件-->
-<button onclick="printInputValue()">获取input元素value值</button>
-<!--输入框-->
-<input id="batch_add_delete_variations_number">
-</body>
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-</script>
+<center>
+	<h1>剑阁峥嵘而崔嵬</h1>
+	<h1>一夫当关 万夫莫开</h1>
+	<h3>&#160</h3>
+
+	<input id="batch_add_delete_variations_number"><!--输入框-->
+	<button onclick="printInputValue()">进发</button><!--单机控件//获取input元素value值-->
+
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script>
+	<!--    单机控件方法-->
+ 	   function printInputValue() {
+  	      // 获取input值
+  	      var variations_number = document.getElementById("batch_add_delete_variations_number").value;
+ 	       // 弹窗
+ 	       alert(variations_number);
+ 	   }
+	</script>
+</center>
+
+	<hr/>
+	<hr/>
+
+
+
+
+<!--中身-->
+<!--时间函数-->
+<body>
+<span id="cg">2016/12/21 上午12:00:00</span><!-- 定义一个id为cg -->
 <script>
-<!--    单机控件方法-->
-    function printInputValue() {
-        // 获取input值
-        var variations_number = document.getElementById("batch_add_delete_variations_number").value;
-        // 弹窗
-        alert(variations_number);
-    }
+<!--这个cg就是span的id，初始化Date时间并转化为字符string类型,每1000毫秒，setInterval() 就会调用函数，直到被关闭。-->
+setInterval("cg.innerHTML=new Date().toLocaleString()",1000);
 </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--凤尾-->
+<center>
+<font face="verdana" color="#ee3f4d">
+	<dl>
+   		<dt>所守或匪亲</dt>
+			<dd><a href="https://mafayc.github.io/">化为狼与豺</a></dd>
+		<h3>&#160</h3>
+		<dt>朝避猛虎</dt>
+			<dd><a href="https://mafayc.github.io/">夕避长蛇</a></dd>
+		<h3>&#160</h3>
+		<dt>磨牙吮血</dt>
+			<dd><a href="https://mafayc.github.io/">杀人如麻</a></dd>
+		<h3>&#160</h3>
+		<dt>锦城虽云乐</dt>
+			<dd><a href="https://mafayc.github.io/">不如早还家</a></dd>
+		<h3>&#160</h3>
+		<dt>蜀道之难</dt>
+			<dd><a href="https://mafayc.github.io/">难于上青天</a></dd>
+		</dl>
+	</dl>
+</font>
+		<h4>侧身西望长咨嗟!<h4>
+</center>
 </html>
