@@ -10,23 +10,42 @@
 </head>
 
 
+
+
+<!--时间-------------------------------------计算----------------------------------函数-->
+<script>
+var d1 = new Date('2018/07/18 14:30:30');
+var d2 = new Date();
+var t0 = parseInt(d2 - d1) / 1000 / 60 / 60/24;
+var t1 = Math.floor(t0);
+var t2 = (t0 - t1)*24;
+var t3 =Math.floor(t2);
+//document.getElementById("").innerHTML=t1;//天
+//document.getElementById("").innerHTML=t3;//时
+</script>
+<!--时间-------------------------------------结束----------------------------------函数-->
+
+
+
+
+
 <!--开-----------------------------------------------------------------------------------始-->
 <body>
 <center>	
 	<h1 id="xianshang1">一夫当关 万夫莫开</h1>
-	<p id="xianshang2">你可以试着输入点什么,输入正确会进入下一幕</p>
+	<p id="xianshang2">你可以试着输入点什么,但不要指望有什么回馈</p>
 
 	<h1 id="kuang"><input id="demo" type="text"></h1>
 	<script>
 	function myFunction()
 	{
 		var x=document.getElementById("demo").value;
-		if(x=="12345")
+		if(x=="2018/07/18"||x=="2018/7/18"||x=="2018.07.18"||x=="2018.7.18"||x=="20180718")
 		{
-		document.getElementById("xianshang1").innerHTML="修改1:你猜对了";
-		document.getElementById("xianshang2").innerHTML="修改2:但是这里的内容";
-		document.getElementById("kuang").innerHTML="修改3:我还没做呢";
-		document.getElementById("qr").innerHTML="修改4:嘿嘿§(*￣▽￣*)§";
+		document.getElementById("xianshang1").innerHTML= "共" + t1 +"天";
+		document.getElementById("xianshang2").innerHTML="零" + t3 + "个小时";
+		document.getElementById("kuang").innerHTML="这是我们相识的时间"; 
+		document.getElementById("qr").innerHTML="嘿嘿§(*￣▽￣*)§";
 		window.alert("对");
 		}
 		else{
@@ -79,40 +98,6 @@
 				window.alert("我的无语你懂的");a=0;b=1;}
 			else if(a==9){
 				window.alert("我的无语你懂的");a=0;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		        }
 	}
 	</script>
@@ -122,10 +107,33 @@
 	<hr/>
 	<hr/>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--时间------------------------------------显示-----------------------------------函数-->
 <span id="cg">2018/07/18 上午12:00:00</span><!-- 定义一个id为cg -->
 <script>
 setInterval("cg.innerHTML=new Date().toLocaleString()",1000);<!--这个cg就是span的id，初始化Date时间并转化为字符string类型,每1000毫秒，setInterval() 就会调用函数，直到被关闭。-->
 </script>
 <!--时间-------------------------------------结束----------------------------------函数-->
+
+
 </html>
