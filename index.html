@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="js/gangqin.js"></script>
+	<title>哎嘿(〜￣▽￣)〜</title>
+	<link rel="shortcut icon" href="图片/boke.ico"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+
+<body>
+<center>
+<p>国际歌</p>
+<audio controls>
+  <source src="音乐/guojige.mp3" >
+您的浏览器不支持 audio 元素。
+</audio>
+<hr/>
+
+
+  <p id="key-selecter">
+    <button @click="down">-</button>
+    <span>{{keyName}}</span>
+    <button @click="up">+</button>
+  </p>
+  <p>QWERTYUI 代表 CDEFGABC</p>
+  <audio id='player0' hidden='true'></audio>
+  <audio id='player1' hidden='true'></audio>
+  <audio id='player2' hidden='true'></audio>
+  <audio id='player3' hidden='true'></audio>
+  <audio id='player4' hidden='true'></audio>
+  <audio id='player5' hidden='true'></audio>
+  <audio id='player6' hidden='true'></audio>
+  <audio id='player7' hidden='true'></audio>
+  <audio id='player8' hidden='true'></audio>
+  <audio id='player9' hidden='true'></audio>
+  <div id="log">
+    <p>log: {{currentLog}}</p>
+    <p v-for="historyLog in historyLogs">{{historyLog}}</p>
+  </div>
+  <script src="js/key-selecter.js"></script>
+  <script src="js/piano.js"></script>
+
+
+
+
+
+</center>
+<div class="shanyang_img"></div>
+  <script src="js/shanyang.js"></script>
+</body>
+
+</html>
