@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符跑马灯球体</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .sphere {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+        }
+        .char {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            color: lime;
+            font-family: monospace;
+            font-size: 16px;
+            text-align: center;
+            line-height: 20px;
+            transform-origin: center center -150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sphere" id="sphere"></div>
+
+    <script>
+        const sphere = document.getElementById('sphere');
+        const chars = 'mafayuan';
+        const numChars = chars.length;
+        const radius = 150; // 球体半径
+        const layers = 20; // 球体层次数
+        const repeatTimes = 5; // 每行重复字符的次数
+        const angleIncrement = (2 * Math.PI) / (numChars * repeatTimes); // 角度增量
+        let angleOffset = 0; // 用于控制跑马灯效果的偏移量
+
+        // 初始化字符位置
+        for (let layer = 0; layer < layers; layer++) {
+            const layerAngle = (Math.PI / layers) * layer; // 每层的垂直角度
+            const layerRadius = Math.sin(layerAngle) * radius; // 当前层的半径
+            const y = Math.cos(layerAngle) * radius; // 当前层的垂直位置
+
+            for (let i = 0; i < numChars * repeatTimes; i++) {
+                const charElement = document.createElement('div');
+                charElement.className = 'char';
+                charElement.textContent = chars[i % numChars]; // 循环使用字符
+                sphere.appendChild(charElement);
+            }
+        }
+
+        // 更新字符位置，实现跑马灯效果
+        function updateSphere() {
+            const charElements = document.querySelectorAll('.char');
+            let index = 0;
+
+            for (let layer = 0; layer < layers; layer++) {
+                const layerAngle = (Math.PI / layers) * layer;
+                const layerRadius = Math.sin(layerAngle) * radius;
+                const y = Math.cos(layerAngle) * radius;
+
+                for (let i = 0; i < numChars * repeatTimes; i++) {
+                    const angle = angleIncrement * i + angleOffset;
+                    const x = Math.cos(angle) * layerRadius;
+                    const z = Math.sin(angle) * layerRadius;
+                    charElements[index].style.transform = `translate3d(${x}px, ${y}px, ${z}px) rotateY(${angle}rad)`;
+                    index++;
+                }
+            }
+
+            angleOffset += 0.01; // 减小增量，降低跑马灯速度
+            requestAnimationFrame(updateSphere);
+        }
+
+        updateSphere(); // 启动跑马灯效果
+    </script>
+</body>
+</html>
