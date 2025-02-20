@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Pragma" name="Pragma" content="no-cache">
+	<title>老马的快乐小屋</title>
+
+	<link rel="shortcut icon" href="图片/boke.ico"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+  <script src="js/gangqin.js"></script>
+</head>
+
+
+<body>
+<div class="toubu">
+  <h2>接着奏乐(〜￣▽￣)〜接着舞</h2>
+
+
+
+</div>
+
+<!-------分割线<hr>-------->
+  <div class="Yincang">
+      <div class="HWobs">
+            <h4>OBS接口配置</h4>
+            <label>凭证ID: <input   type="text" value="ITKMWQQHNSEJYNIDZLEQ" id="ak" size="30"/></label>
+            <p><!--换行--></p>
+            <label>密码: <input     type="text" value="xNK5o9xHUlSUDBc67H1EGRnMvejBsrnfqcvp2b4w" id="sk" size="30"/></label> 
+            <p><!--换行--></p>
+            <label>域名: <input     type="text" value="https://obs.cn-north-4.myhuaweicloud.com" id="server" size="30"/></label>
+            <p><!--换行--></p>
+            <label>OBS桶: <input    type="text" value="yuan-music" id="bucketname"/></label> 
+            <p><!--换行--></p>
+            <input type="button"    value="[ 读取OBS列表 ]" onclick="listObjects();"/>
+            <p><!--换行--></p>
+      </div>
+  </div>
+<!-------分割线<hr>-------->
+
+
+
+
+<div class="shenbu">
+  
+    <div class="gqzy"><!--钢琴奏乐-->
+      <h4>键盘钢琴</h4>
+      <p id="key-selecter">
+        <button @click="down">-</button>
+        <span>{{keyName}}</span>
+        <button @click="up">+</button>
+      </p>
+      <p>QWERTYUI 代表 CDEFGABC</p>
+      <audio id='player0' hidden='true'></audio>
+      <audio id='player1' hidden='true'></audio>
+      <audio id='player2' hidden='true'></audio>
+      <audio id='player3' hidden='true'></audio>
+      <audio id='player4' hidden='true'></audio>
+      <audio id='player5' hidden='true'></audio>
+      <audio id='player6' hidden='true'></audio>
+      <audio id='player7' hidden='true'></audio>
+      <audio id='player8' hidden='true'></audio>
+      <audio id='player9' hidden='true'></audio>
+      <div id="log">
+        <p>记录: {{currentLog}}</p>
+        <p v-for="historyLog in historyLogs">{{historyLog}}</p>
+      </div>
+      <script src="js/key-selecter.js"></script>
+      <script src="js/piano.js"></script>
+
+
+    </div>
+
+    <div class="gqqk" id="audiodiv"><!--歌曲列表-->
+      <h4>钢琴曲库</h4>
+      <input class="jzqk" type="button" value="加载曲库" onclick="listObjects(); this.style.display='none';" />
+    </div>
+
+</div>
+
+<div class="weibu">
+  尾部
+</div>
+
+
+<!--调用JS文件-->
+    <script src="js/esdk-obs-browserjs.min.js"></script>  <!--调用华为云OBS的SDk-->
+    <script src="js/http_obs.js" defer></script>                <!--调用HTTP请求-->
+    <div class="shanyang_img"></div>        <!--调用山羊图片-->
+    <script src="js/shanyang.js"></script>  <!--调用山羊动画-->
+<!--调用JS文件-->
+</body>
+</html>
+
+
+
+
