@@ -1,0 +1,83 @@
+
+*/* 全局效果 */{
+
+    box-sizing: border-box; /*此代码，将元素的实际宽高就包含了它的内容区、内边距和边框，而不仅仅是内容区本身。*/
+    padding:0;              /*清除内边距*/
+    margin:0px;             /*清除外边距*/
+    border-width: 0px;      /* 边框宽度 */
+    text-align: center;
+}
+/* 整个页面大小 */body{
+    width: 100vw;
+    height:  100vh;
+    overflow: hidden;/* 去除滚动条 */
+    
+}
+
+.toubu{
+    height: 10vh;
+    border-width: 1px; /* 固定宽度 */
+    border-bottom-style:solid;
+} 
+
+.shenbu{
+    border-width: 1px; /* 固定宽度 */
+    border-top-style:solid;  
+    animation: YincangBiankuang 0s 3s forwards; /* 动画时间，延迟时间///隐藏边框 */
+
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 两列等宽 */
+
+}
+@keyframes YincangBiankuang { 
+    form{border-width: 2px; /* 固定宽度 */ }
+    to { border-width: 0px; /* 固定宽度 */}
+}
+
+.weibu{
+    /*height: 6vh;*/
+    color: #000;
+}
+
+
+
+/* 山羊图标样式 */.shanyang_img{
+    width: 10vh;
+    height: 10vh;
+    position: absolute;
+    background-image: url('../图片/shanyang.gif');
+    background-size: cover;
+}
+.gqzy{/* 键盘钢琴奏乐 */
+    height: 80vh;
+    overflow-y: auto;
+}
+.gqqk{/* 钢琴曲库  */
+    border-left:1px solid black;
+}
+.jzqk{
+    background:#FFF;    
+    color: #00F;
+    text-decoration: underline; /* 下划线 */
+    text-decoration-color: #00F; /* 自定义下划线颜色 */
+}
+
+
+
+
+/* 需要隐藏的内容 */.Yincang{
+        display: grid;/* 设置为网格布局 */
+        overflow: hidden; /* 隐藏溢出内容 */
+        animation: YincangDonghua 1s 2s forwards; /* 动画时间，延迟时间///隐藏华为OBS */
+}
+/* 华为OBS */.HWobs { /*后代选择器*/
+    min-height: 0; 
+}
+@keyframes YincangDonghua {
+    0%   { grid-template-rows: 1fr; }
+    50%  { grid-template-rows: 0.9fr;}
+    100% { grid-template-rows: 0fr; }
+}
+
+
+
